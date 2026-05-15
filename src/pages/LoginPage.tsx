@@ -46,8 +46,8 @@ export function LoginPage({ onLoginSuccess }: LoginPageProps) {
     event.preventDefault()
 
     try {
-      await loginWithPhone(phone)
-      setStatus('OTP sent for phone login.', 'success')
+      const result = await loginWithPhone(phone)
+      setStatus(result.sent ? 'OTP sent for phone login.' : 'Could not send OTP.', 'success')
       setIsOtpOpen(true)
     } catch (error) {
       setStatus((error as Error).message, 'error')

@@ -27,10 +27,12 @@ function App() {
   }, [themeMode])
 
   useEffect(() => {
-    const jwt = readStoredJwt()
-    if (!jwt) {
-      clearStoredJwt()
-    }
+    void (async () => {
+      const jwt = await readStoredJwt()
+      if (!jwt) {
+        clearStoredJwt()
+      }
+    })()
   }, [])
 
   return (
