@@ -1,18 +1,19 @@
 # loginUI
 
-Premium React + TypeScript login and signup UI for 1442space sovereign identity.
+Login Auth UI for 1442space.
 
 ## Setup
 
-1. Copy `.env.example` to `.env`.
-2. Fill in Supabase values:
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
-3. Optional backend sync endpoint:
-   - `VITE_AUTH_SERVICE_URL`
+1. Install dependencies:
+   - `npm install`
+2. Create a local env file:
+   - `cp .env.example .env.local`
+3. Start the app:
+   - `npm run dev`
 
-## Scripts
+The app uses these environment variables to initialize Supabase:
 
-- `npm run dev` - local development
-- `npm run lint` - lint checks
-- `npm run build` - production build
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
+
+Click **Check Supabase connection** in the UI to verify the client can reach Supabase.
